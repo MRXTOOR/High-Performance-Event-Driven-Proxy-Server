@@ -2,6 +2,48 @@
 
 Production-ready event-driven proxy server written in Go.
 
+## Architecture
+
+```mermaid
+flowchart TD
+    subgraph User
+        A[Client]
+    end
+    subgraph ProxyServer
+        B[Listener HTTP/TCP/UDP]
+        C[Core Engine]
+        D[Config Loader]
+        E[Service Discovery]
+        F[gRPC API]
+        G[Plugin System]
+        H[Metrics & Tracing]
+    end
+    subgraph Backends
+        I[Backend Services]
+    end
+    subgraph External
+        J[Consul or etcd]
+        K[Prometheus/Grafana]
+        L[OpenTelemetry Collector]
+    end
+
+    A -->|HTTP/TCP/UDP| B
+    B --> C
+    C --> I
+    C --> D
+    D --> C
+    D --> E
+    E --> C
+    E --> J
+    C --> F
+    C --> G
+    C --> H
+    H --> K
+    H --> L
+    F --> A
+    G --> C
+```
+
 ## Features
 - HTTP(S)/TCP/UDP proxying
 - Horizontal scaling
