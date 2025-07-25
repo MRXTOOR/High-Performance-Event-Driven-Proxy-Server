@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package proxy;
+
+option go_package = "github.com/MRXTOOR/High-Performance-Event-Driven-Proxy-Server/internal/api;api";
+
+service ProxyAdmin {
+  rpc GetConfig (Empty) returns (ConfigResponse);
+  rpc ReloadConfig (Empty) returns (ReloadResponse);
+  rpc GetBackends (Empty) returns (BackendsResponse);
+}
+
+message Empty {}
+
+message ConfigResponse {
+  string config_yaml = 1;
+}
+
+message ReloadResponse {
+  bool success = 1;
+  string error = 2;
+}
+
+message BackendsResponse {
+  repeated Backend backends = 1;
+}
+
+message Backend {
+  string name = 1;
+  string address = 2;
+  string protocol = 3;
+  bool alive = 4;
+} 

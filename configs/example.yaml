@@ -1,0 +1,20 @@
+# Пример конфига для High-Performance-Event-Driven-Proxy-Server
+listen:
+  http: ":8080"
+  tcp: ":9000"
+  udp: ":9001"
+backends:
+  - name: "local-http"
+    address: "localhost:8081"
+    protocol: "http"
+  - name: "service2"
+    address: "10.0.0.2:9000"
+    protocol: "tcp"
+discovery:
+  type: "consul"
+  address: "localhost:8500"
+  service_name: "my-service"
+  protocol: "http"
+plugins:
+  - type: "lua"
+    path: "plugins/request_filter.lua" 
