@@ -14,34 +14,35 @@ flowchart TD
         C[Core Engine]
         D[Config Loader]
         E[Service Discovery]
-        F[gRPC API]
-        G[Plugin System]
+        F[gRPC Admin API]
+        G[Plugin System (Lua/WASM)]
         H[Metrics & Tracing]
     end
     subgraph Backends
         I[Backend Services]
     end
     subgraph External
-        J[Consul or etcd]
+        J[Consul]
         K[Prometheus/Grafana]
         L[OpenTelemetry Collector]
     end
 
     A -->|HTTP/TCP/UDP| B
     B --> C
-    C --> I
-    C --> D
-    D --> C
-    D --> E
-    E --> C
-    E --> J
-    C --> F
-    C --> G
+    C -->|middleware| G
+    G --> C
+    C -->|load balancing| I
     C --> H
+    C --> F
+    C --> D
+    D -->|hot reload| C
+    D --> E
+    E -->|update backends| C
+    E --> J
     H --> K
     H --> L
-    F --> A
-    G --> C
+    F -->|manage| D
+    F -->|manage| E
 ```
 
 ## Features
