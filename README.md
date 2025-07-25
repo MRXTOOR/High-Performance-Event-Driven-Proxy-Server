@@ -47,17 +47,17 @@ flowchart TD
 
 ## Features
 
-| Feature                                 | Description                                   |
-|-----------------------------------------|-----------------------------------------------|
-| ⚡ HTTP(S)/TCP/UDP Proxying             | Proxy for HTTP(S), TCP, and UDP               |
-| 📈 Horizontal Scaling                   | Horizontal scalability                        |
-| ♻️ Hot Reload Configuration             | Hot reload of configuration                   |
-| 🚦 Zero Downtime Deploy                 | Zero downtime deployment                      |
-| 🛰️ gRPC API for Management              | gRPC API for management                       |
-| 🔍 Dynamic Service Discovery (Consul)   | Dynamic service discovery via Consul          |
-| 🧩 Lua/WASM Plugin Support              | Lua and WASM plugin support                   |
-| 📊 Prometheus Metrics                   | Prometheus metrics                            |
-| 🕵️ OpenTelemetry Tracing                | Distributed tracing with OpenTelemetry        |
+| Feature                                 | Description                                                        |
+|------------------------------------------|--------------------------------------------------------------------|
+| ⚡ HTTP(S)/TCP/UDP Proxying              | High-performance proxying for HTTP(S), TCP, and UDP protocols      |
+| 📈 Horizontal Scaling                    | Designed for horizontal scaling and distributed deployments        |
+| ♻️ Hot Reload Configuration              | Live configuration reload without restarting the server            |
+| 🚦 Zero Downtime Deploy                  | Seamless deployments with zero downtime and connection draining    |
+| 🛰️ gRPC API for Management               | Full-featured gRPC API for remote management and monitoring        |
+| 🔍 Dynamic Service Discovery (Consul)    | Automatic backend discovery and updates via Consul                 |
+| 🧩 Lua/WASM Plugin Support               | Extensible request/response processing with Lua and WASM plugins   |
+| 📊 Prometheus Metrics                    | Built-in Prometheus metrics endpoint for real-time monitoring      |
+| 🕵️ OpenTelemetry Tracing                 | Distributed tracing with OpenTelemetry integration                 |
 
 ## Project Structure
 ```
