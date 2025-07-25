@@ -33,11 +33,25 @@ test/                  # Integration tests
 4. Metrics: `http://localhost:9100/metrics`
 5. gRPC API: `localhost:9090`
 
+## Docker
+Build and run:
+```
+docker build -t proxy-server .
+docker run -p 8080:8080 -p 9000:9000 -p 9001:9001 -p 9100:9100 -p 9090:9090 proxy-server
+```
+
 ## Testing
 Run all integration tests:
 ```
 go test ./test/ -v
 ```
+
+## Troubleshooting
+- **Port already in use:**
+  - Stop any process using the port (e.g. `lsof -i :8080` and `kill <PID>`), or run Docker with different ports.
+- **Consul connection refused:**
+  - Start Consul locally: `docker run -d --name=consul -p 8500:8500 consul`
+  - Or disable discovery in config if not needed.
 
 ## License
 MIT 
