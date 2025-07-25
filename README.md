@@ -46,14 +46,18 @@ flowchart TD
 ```
 
 ## Features
-- HTTP(S)/TCP/UDP proxying
-- Horizontal scaling
-- Hot reload configuration
-- Zero downtime deploy
-- gRPC API for management
-- Dynamic service discovery (Consul)
-- Lua/WASM plugin support
-- Prometheus metrics, OpenTelemetry tracing
+
+| Фича                                   | Описание                                      |
+|-----------------------------------------|-----------------------------------------------|
+| ⚡ HTTP(S)/TCP/UDP Proxying             | Прокси для HTTP(S), TCP и UDP                 |
+| 📈 Horizontal Scaling                   | Горизонтальное масштабирование                |
+| ♻️ Hot Reload Configuration             | Горячая перезагрузка конфигурации             |
+| 🚦 Zero Downtime Deploy                 | Развёртывание без простоя                     |
+| 🛰️ gRPC API for Management              | gRPC API для управления                       |
+| 🔍 Dynamic Service Discovery (Consul)   | Динамическое обнаружение сервисов (Consul)    |
+| 🧩 Lua/WASM Plugin Support              | Поддержка Lua и WASM плагинов                 |
+| 📊 Prometheus Metrics                   | Метрики Prometheus                            |
+| 🕵️ OpenTelemetry Tracing                | Трассировка через OpenTelemetry               |
 
 ## Project Structure
 ```
