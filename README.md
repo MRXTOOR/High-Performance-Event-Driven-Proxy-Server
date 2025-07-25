@@ -10,21 +10,21 @@ flowchart TD
         A[Client]
     end
     subgraph ProxyServer
-        B[Listener HTTP/TCP/UDP]
-        C[Core Engine]
-        D[Config Loader]
-        E[Service Discovery]
-        F[gRPC Admin API]
-        G[Plugin System (Lua/WASM)]
-        H[Metrics & Tracing]
+        B["Listener HTTP/TCP/UDP"]
+        C["Core Engine"]
+        D["Config Loader"]
+        E["Service Discovery"]
+        F["gRPC Admin API"]
+        G["Plugin System (Lua/WASM)"]
+        H["Metrics & Tracing"]
     end
     subgraph Backends
-        I[Backend Services]
+        I["Backend Services"]
     end
     subgraph External
-        J[Consul]
-        K[Prometheus/Grafana]
-        L[OpenTelemetry Collector]
+        J["Consul"]
+        K["Prometheus/Grafana"]
+        L["OpenTelemetry Collector"]
     end
 
     A -->|HTTP/TCP/UDP| B
